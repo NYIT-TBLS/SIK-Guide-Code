@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="160 160 160" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1280">
+<PageBlocks>
+<Block genus-name="pin-write-digital" id="313">
+<Location>
+<X>156</X>
+<Y>63</Y>
+</Location>
+<Comment>
+<Text>digitalWrite(13, HIGH);   Turn on the LED</Text>
+<Location>
+<X>356</X>
+<Y>23</Y>
+</Location>
+<BoxSize>
+<Width>384</Width>
+<Height>112</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>312</BeforeBlockId>
+<AfterBlockId>321</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="314" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+<BlockConnector con-block-id="315" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="delay" id="321">
+<Location>
+<X>156</X>
+<Y>117</Y>
+</Location>
+<Comment>
+<Text>delay() is a function that pauses for a given amount of time.  It takes one value, the amount of time to wait, measured in milliseconds. There are 1000 milliseconds in a second, so if you delay (1000), it will pause for exactly one second.</Text>
+<Location>
+<X>408</X>
+<Y>77</Y>
+</Location>
+<BoxSize>
+<Width>364</Width>
+<Height>137</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>313</BeforeBlockId>
+<AfterBlockId>316</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="322" connector-kind="socket" connector-type="number" init-type="number" label="milliseconds" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="pin-write-digital" id="316">
+<Location>
+<X>156</X>
+<Y>147</Y>
+</Location>
+<Comment>
+<Text>digitalWrite(13, LOW);   Turn off the LED</Text>
+<Location>
+<X>356</X>
+<Y>107</Y>
+</Location>
+<BoxSize>
+<Width>367</Width>
+<Height>67</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>321</BeforeBlockId>
+<AfterBlockId>319</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="317" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+<BlockConnector con-block-id="318" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="delay" id="319">
+<Location>
+<X>156</X>
+<Y>201</Y>
+</Location>
+<BeforeBlockId>316</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="320" connector-kind="socket" connector-type="number" init-type="number" label="milliseconds" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="320">
+<Label>1000</Label>
+<Location>
+<X>370</X>
+<Y>204</Y>
+</Location>
+<Comment>
+<Text>delay(1000);   Wait for one second</Text>
+<Location>
+<X>470</X>
+<Y>164</Y>
+</Location>
+<BoxSize>
+<Width>258</Width>
+<Height>103</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<Plug>
+<BlockConnector con-block-id="319" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="digital-low" id="318">
+<Location>
+<X>332</X>
+<Y>174</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="316" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="317">
+<Label>13</Label>
+<Location>
+<X>332</X>
+<Y>150</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="316" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="322">
+<Label>1000</Label>
+<Location>
+<X>384</X>
+<Y>120</Y>
+</Location>
+<Comment>
+<Text>delay(1000);   Wait for one second</Text>
+<Location>
+<X>484</X>
+<Y>80</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<Plug>
+<BlockConnector con-block-id="321" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="digital-high" id="315">
+<Location>
+<X>332</X>
+<Y>90</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="313" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="314">
+<Label>13</Label>
+<Location>
+<X>332</X>
+<Y>66</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="313" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="312">
+<Location>
+<X>20</X>
+<Y>20</Y>
+</Location>
+<Comment>
+<Text>SparkFun Inventor's Kit
+Example sketch 01
+
+BLINKING A LED
+
+  Turn an LED on for one second, off for one second, and repeat forever.
+
+Hardware connections:
+
+  Most Arduinos already have an LED and resistor connected to pin 13, so you may not need any additional circuitry.
+
+  But if you'd like to connect a second LED to pin 13, or use a different pin, follow these steps:
+
+    Connect the positive side of your LED (longer leg) to Arduino digital pin 13 (or another digital pin, don't forget to change the code to match).
+  
+    Connect the negative side of your LED (shorter leg) to a 330 Ohm resistor (orange-orange-brown). Connect the other side of the resistor to ground.
+
+    pin 13 _____ + LED - _____ 330 Ohm _____ GND
+	
+    (We always use resistors between the Arduino and and LEDs to keep the LEDs from burning out due to too much current.)
+
+This sketch was written by SparkFun Electronics, with lots of help from the Arduino community.
+This code is completely free for any use.
+Visit http://learn.sparkfun.com/products/2 for SIK information.
+Visit http://www.arduino.cc to learn about the Arduino.
+
+Version 2.0 6/2012 MDG
+
+Ardublock code written by NYIT-TBLS
+This code is completely free for any use.
+Available at https://github.com/NYIT-TBLS/SIK-Guide-Code/tree/ardublock
+
+Welcome to Arduino!
+
+If you're brand-new to this, there will be some new things to learn, but we'll jump right in and explain things as we go.
+
+The Arduino is a tiny computer that runs programs called "sketches". These are text files written using instructions the computer understands. You're reading a sketch right now.
+
+A "function" is a named block of code, that performs a specific, well, function. Many useful functions are already built-in to the Arduino; others you'll name and write yourself for your own purposes.
+
+All Arduino sketches MUST have two specific functions, named "setup()" and "loop()". The Arduino runs these functions automatically when it starts up or if you press the reset button. You'll typically fill these function "shells" with your
+own code. Let's get started!
+
+
+The setup() function runs once when the sketch starts.  You'll use it for things you need to do first, or only once
+
+void setup()
+{
+  The Arduino has 13 digital input/output pins. These pins can be configured as either inputs or outputs. We set this up with a built-in function called pinMode().
+
+  The pinMode() function takes two values, which you type in the parenthesis after the function name. The first value is a pin number, the second value is the word INPUT or OUTPUT.
+  
+  Here we'll set up pin 13 (the one connected to a LED) to be an output. We're doing this because we need to send voltage "out" of the Arduino to the LED.
+
+  pinMode(13, OUTPUT);
+
+  By the way, the Arduino offers many useful built-in functions like this one. You can find information on all of them at the Arduino website: http://arduino.cc/en/Reference
+}
+
+
+After setup() finishes, the loop() function runs over and over again, forever (or until you turn off or reset the Arduino).  This is usually where the bulk of your program lives:
+
+
+void loop()
+{
+  The 13 digital pins on your Arduino are great at inputting and outputting on/off, or "digital" signals. These signals will always be either 5 Volts (which we call "HIGH"), or 0 Volts (which we call "LOW").
+
+  Because we have an LED connected to pin 13, if we make that output HIGH, the LED will get voltage and light up. If we make that output LOW, the LED will have no voltage and turn off.
+
+  digitalWrite() is the built-in function we use to make an output pin HIGH or LOW. It takes two values; a pin number, followed by the word HIGH or LOW.
+
+
+All together, the code turns the LED on, waits one second, turns it off, and waits another second.
+
+When the computer gets to the end of the loop() function, it starts loop() over again. So this program will continue blinking the LED on and off!
+
+Try changing the 1000 in the above delay() functions to different numbers and see how it affects the timing. Smaller values will make the loop run faster. (Why?)</Text>
+<Location>
+<X>201</X>
+<Y>0</Y>
+</Location>
+<BoxSize>
+<Width>463</Width>
+<Height>285</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<Sockets num-sockets="2">
+<BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="setup" position-type="single"/>
+<BlockConnector con-block-id="313" connector-kind="socket" connector-type="cmd" init-type="cmd" label="loop" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>
