@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="160 160 160" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+<PageBlocks>
+<Block genus-name="setter_variable_number" id="87">
+<Location>
+<X>161</X>
+<Y>177</Y>
+</Location>
+<Comment>
+<Text>First we'll declare another integer variable
+to store the value of the potentiometer:
+
+int sensorValue;
+
+  The potentiometer is set up as a voltage divider, so that
+  when you turn it, the voltage on the center pin will vary
+  from 0V to 5V. We've connected the center pin on the
+  potentiometer to the Arduino's analog input 0.
+
+  The Arduino can read external voltages on the analog input
+  pins using a built-in function called analogRead(). This
+  function takes one input value, the analog pin we're using
+  (sensorPin, which we earlier set to 0). It returns an integer
+  number that ranges from 0 (0 Volts) to 1023 (5 Volts).
+  We're sticking this value into the sensorValue variable:
+
+sensorValue = analogRead(sensorPin);    
+
+  Now we'll blink the LED like in the first example, but we'll
+  use the sensorValue variable to change the blink speed
+  (the smaller the number, the faster it will blink).</Text>
+<Location>
+<X>171</X>
+<Y>230</Y>
+</Location>
+<BoxSize>
+<Width>546</Width>
+<Height>471</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>80</BeforeBlockId>
+<AfterBlockId>93</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="88" connector-kind="socket" connector-type="number" init-type="number" label="variable" position-type="single"/>
+<BlockConnector con-block-id="90" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="pin-write-digital" id="93">
+<Location>
+<X>161</X>
+<Y>231</Y>
+</Location>
+<Comment>
+<Text>digitalWrite(ledPin, HIGH);  Turn the LED on</Text>
+<Location>
+<X>361</X>
+<Y>191</Y>
+</Location>
+<BoxSize>
+<Width>371</Width>
+<Height>78</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>87</BeforeBlockId>
+<AfterBlockId>99</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="109" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+<BlockConnector con-block-id="95" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="delay" id="99">
+<Location>
+<X>161</X>
+<Y>285</Y>
+</Location>
+<Comment>
+<Text>delay(sensorValue);  Pause for sensorValue milliseconds</Text>
+<Location>
+<X>413</X>
+<Y>245</Y>
+</Location>
+<BoxSize>
+<Width>364</Width>
+<Height>96</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>93</BeforeBlockId>
+<AfterBlockId>103</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="101" connector-kind="socket" connector-type="number" init-type="number" label="milliseconds" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="pin-write-digital" id="103">
+<Location>
+<X>161</X>
+<Y>315</Y>
+</Location>
+<Comment>
+<Text>digitalWrite(ledPin, LOW);  Turn the LED off</Text>
+<Location>
+<X>361</X>
+<Y>275</Y>
+</Location>
+<BoxSize>
+<Width>377</Width>
+<Height>62</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>99</BeforeBlockId>
+<AfterBlockId>106</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="108" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+<BlockConnector con-block-id="105" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="delay" id="106">
+<Location>
+<X>161</X>
+<Y>369</Y>
+</Location>
+<Comment>
+<Text>delay(sensorValue); Pause for sensorValue milliseconds</Text>
+<Location>
+<X>413</X>
+<Y>329</Y>
+</Location>
+<BoxSize>
+<Width>348</Width>
+<Height>62</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>103</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="107" connector-kind="socket" connector-type="number" init-type="number" label="milliseconds" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_number" id="107">
+<Label>sensorValue</Label>
+<Location>
+<X>389</X>
+<Y>372</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="106" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="digital-low" id="105">
+<Location>
+<X>337</X>
+<Y>342</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="103" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="108">
+<Label>ledPin</Label>
+<Location>
+<X>337</X>
+<Y>318</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="103" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="101">
+<Label>sensorValue</Label>
+<Location>
+<X>389</X>
+<Y>288</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="99" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="digital-high" id="95">
+<Location>
+<X>337</X>
+<Y>258</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="93" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="109">
+<Label>ledPin</Label>
+<Location>
+<X>337</X>
+<Y>234</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="93" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="pin-read-analog" id="90">
+<Location>
+<X>425</X>
+<Y>204</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="87" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="92" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_number" id="92">
+<Label>sensorPin</Label>
+<Location>
+<X>553</X>
+<Y>204</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="90" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="88">
+<Label>sensorValue</Label>
+<Location>
+<X>425</X>
+<Y>180</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="87" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="80">
+<Location>
+<X>25</X>
+<Y>50</Y>
+</Location>
+<Comment>
+<Text>SparkFun Inventor's Kit
+Example sketch 02
+
+POTENTIOMETER
+
+  Measure the position of a potentiometer and use it to
+  control the blink rate of an LED. Turn the knob to make
+  it blink faster or slower!
+
+What's a potentiometer?
+
+  A potentiometer, or "pot" for short, is a control knob.
+  It's the same type of control you'd use to change volume, 
+  dim a lamp, etc. A potentiometer changes resistance as it
+  is turned. By using it as a "voltage divider", the Arduino
+  can sense the position of the knob, and use that value to
+  control whatever you wish (like the blink rate of an LED,
+  as we're doing here).
+	
+Hardware connections:
+
+  Potentiometer:
+	
+    Potentiometers have three pins. When we're using it as a
+    voltage divider, we connect the outside pins to power and
+    ground. The middle pin will be the signal (a voltage which
+    varies from 0 Volts to 5 Volts depending on the position of
+    the knob).
+
+    Connect the middle pin to ANALOG IN pin 0 on the Arduino.
+    Connect one of the outside pins to 5V.
+    Connect the other outside pin to GND.
+
+    (TIP: if once your program is running, the knob feels
+    "backwards", you can swap the 5V and GND pins to reverse
+    the direction.)
+		
+  LED:
+
+    Most Arduinos already have an LED and resistor connected to
+    pin 13, so you may not need any additional circuitry.
+
+    But if you'd like to connect a second LED to pin 13, or use
+    a different pin, follow these steps:
+
+      Connect the positive side of your LED (longer leg) to
+      Arduino digital pin 13 (or another digital pin, but don't
+      forget to change the code to match).
+      
+      Connect the negative side of your LED (shorter leg) to a
+      330 Ohm resistor (orange-orange-brown).
+      
+      Connect the other side of the resistor to ground.
+
+This sketch was written by SparkFun Electronics,
+with lots of help from the Arduino community.
+This code is completely free for any use.
+Visit http://learn.sparkfun.com/products/2 for SIK information.
+Visit http://www.arduino.cc to learn about the Arduino.
+
+Version 2.0 6/2012 MDG
+
+This sketch was written by NYIT-TBLS.
+This code is completely free for any use.
+Visit https://github.com/NYIT-TBLS/SIK-Guide-Code/tree/ardublock
+
+Welcome back! In this sketch we'll start using "variables".
+
+A variable is a named number. We'll often use these to store
+numbers that change, such as measurements from the outside
+world, or to make a sketch easier to understand (sometimes a
+descriptive name makes more sense than looking at a number).
+
+Variables can be different "data types", which is the kind of
+number we're using (can it be negative? Have a decimal point?)
+We'll introduce more data types later, but for the moment we'll
+stick with good old "integers" (called "int" in your sketch).
+
+Integers are whole numbers (0, 3, 5643), can be negative, and
+for reasons we won't go into right now, can range from -32768
+to 32767. (Don't worry, if you need to work with larger numbers,
+there are other data types for that. See:
+http://arduino.cc/en/Reference/VariableDeclaration
+for a list of all the data types you can use).
+
+You must "declare" variables before you use them, so that the
+computer knows about them. Here we'll declare two integer
+variables, and at the same time, initialize them to specific
+values. We're doing this so that further down, we can refer to
+the pins by name rather than number.
+
+Note that variable names are case-sensitive! If you get an
+"(variable) was not declared in this scope" error, double-check
+that you typed the name correctly.
+
+Here we're creating a variable called "sensorPin" of type "int"
+and initializing it to have the value "0".</Text>
+<Location>
+<X>98</X>
+<Y>29</Y>
+</Location>
+<BoxSize>
+<Width>611</Width>
+<Height>616</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="84" connector-kind="socket" connector-type="cmd" init-type="cmd" label="setup" position-type="single"/>
+<BlockConnector con-block-id="87" connector-kind="socket" connector-type="cmd" init-type="cmd" label="loop" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="setter_variable_number" id="84">
+<Location>
+<X>162</X>
+<Y>58</Y>
+</Location>
+<Comment>
+<Text>int sensorPin = 0;  The potentiometer is connected to analog pin 0</Text>
+<Location>
+<X>226</X>
+<Y>123</Y>
+</Location>
+<BoxSize>
+<Width>431</Width>
+<Height>67</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>80</BeforeBlockId>
+<AfterBlockId>81</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="85" connector-kind="socket" connector-type="number" init-type="number" label="variable" position-type="single"/>
+<BlockConnector con-block-id="86" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="setter_variable_number" id="81">
+<Location>
+<X>162</X>
+<Y>112</Y>
+</Location>
+<Comment>
+<Text>int ledPin = 13;  The LED is connected to digital pin 13</Text>
+<Location>
+<X>230</X>
+<Y>153</Y>
+</Location>
+<BoxSize>
+<Width>366</Width>
+<Height>70</Height>
+</BoxSize>
+<Collapsed/>
+</Comment>
+<BeforeBlockId>84</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="82" connector-kind="socket" connector-type="number" init-type="number" label="variable" position-type="single"/>
+<BlockConnector con-block-id="83" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="83">
+<Label>13</Label>
+<Location>
+<X>426</X>
+<Y>139</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="81" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="82">
+<Label>ledPin</Label>
+<Location>
+<X>426</X>
+<Y>115</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="81" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="86">
+<Label>0</Label>
+<Location>
+<X>426</X>
+<Y>85</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="84" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="85">
+<Label>sensorPin</Label>
+<Location>
+<X>426</X>
+<Y>61</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="84" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>
